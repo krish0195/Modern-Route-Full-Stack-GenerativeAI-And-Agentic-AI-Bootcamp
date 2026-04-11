@@ -1,0 +1,37 @@
+uv init
+
+uv python list
+
+uv venv venv --python cpython-3.11.13-windows-x86_64-none
+
+venv\Scripts\activate
+
+uv pip install -r requirements.txt
+uv pip install structlog
+***********
+{'messages': [HumanMessage(content='What is the capital of France?', additional_kwargs={}, response_metadata={}),
+
+  AIMessage(content='The capital of France is Paris.', additional_kwargs={}, response_metadata={'token_usage': {'completion_tokens': 8, 'prompt_tokens': 42, 'total_tokens': 50, 'completion_time': 0.011204114, 'completion_tokens_details': None, 'prompt_time': 0.001947612, 'prompt_tokens_details': None, 'queue_time': 0.049272038, 'total_time': 0.013151726}, 'model_name': 'llama-3.3-70b-versatile', 'system_fingerprint': 'fp_dae98b5ecb', 'service_tier': 'on_demand', 'finish_reason': 'stop', 'logprobs': None, 'model_provider': 'groq'}, id='lc_run--019c5b37-b615-7831-900c-d6d97865b3ac-0', tool_calls=[], invalid_tool_calls=[], usage_metadata={'input_tokens': 42, 'output_tokens': 8, 'total_tokens': 50}),
+
+  AIMessage(content='Total token number in the generated answer (word count) is 6', additional_kwargs={}, response_metadata={}, tool_calls=[], invalid_tool_calls=[])]}
+**************
+
+lanchain tools:https://docs.langchain.com/oss/javascript/integrations/tools/index#tool-integrations
+
+**********************************************************************
+model provider-openai
+		google
+		anthropic
+		cohere
+		aws bedrock
+
+uv python list
+uv venv venv --python cpython-3.11.13-windows-x86_64-none
+venv\Scripts\activate
+uv pip install -r requirements.txt
+pip install ipykernel
+
+
+To install new python versions: use only c python interpreter
+
+	uv python install cpython-3.10.18-windows-x86_64-none
