@@ -1,7 +1,18 @@
+https://github.com/sunnysavita10/Full-Stack-GenAI-Bootcamp-1.0/tree/main
+
+git remote add origin	https://github.com/krish0195/Modern-Route-Full-Stack-GenerativeAI-And-Agentic-AI-Bootcamp.git
+git push -u origin main
+
+
+git add .
+git commit -m "added portfolio and blog"
+git push -u origin main --force /git push
+
+
+
+
 uv init
-
 uv python list
-
 uv venv venv --python cpython-3.11.13-windows-x86_64-none
 
 venv\Scripts\activate
@@ -35,3 +46,9 @@ pip install ipykernel
 To install new python versions: use only c python interpreter
 
 	uv python install cpython-3.10.18-windows-x86_64-none
+
+
+cd D:\Datascience\Modern Route-Full Stack GenerativeAI And Agentic AI Bootcamp\Assignment\Text Feature Engineering Assignment\scripts
+python data_scrapper.py
+	(pip install bs4
+	pip install undetected-chromedriver)

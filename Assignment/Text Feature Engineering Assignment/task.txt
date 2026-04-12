@@ -1,0 +1,68 @@
+This assignment focuses on a complete text processing pipeline, from web scraping to sentiment classification. Below is the text extracted and organized by task from your screenshots.
+
+Text Feature Engineering Assignment (Real-world Dataset)
+Problem Statement
+You are building a Text Processing Pipeline for a company that wants to analyze real user-generated text data such as reviews and comments, and convert them into numerical features for machine learning models. Your task is to collect real-world data and implement One Hot Encoding, Bag of Words, and TF-IDF.
+
+Dataset Collection (Real-world)
+Scrape product reviews from Flipkart or Amazon (minimum 100 reviews).
+
+You can use Selenium, BeautifulSoup, or any reliable scraping method.
+
+Store data in CSV format with at least one column: review_text.
+
+Ensure data is clean and readable.
+
+Do not scrape restricted or sensitive content.
+
+Task 1: Preprocessing
+Convert text to lowercase.
+
+Tokenization.
+
+Remove punctuation.
+
+Optional: Remove stopwords (and, a, the).
+
+Optional: Lemmatization.
+
+Task 2: Vocabulary Creation
+Build vocabulary manually or using sklearn. Print vocabulary size and analyze top frequent words.
+
+Task 3: Feature Engineering
+One Hot Encoding (document-level vector).
+
+Bag of Words using CountVectorizer.
+
+TF-IDF using TfidfVectorizer.
+
+Task 4: Comparison Analysis
+(Implied: Compare the outputs and structures of the three techniques above.)
+
+Task 5: Sparse Matrix Analysis
+Print shape of matrices, calculate sparsity (percentage of zeros), and explain why sparse matrices are inefficient for large-scale systems.
+
+Task 6: Real-world Questions
+Why Bag of Words fails in understanding semantic meaning (example: similar meaning words).
+
+When to use Bag of Words and TF-IDF in industry.
+
+Limitations of TF-IDF in real applications.
+
+Task 7: Mini Use Case
+Perform sentiment classification (positive vs negative reviews).
+
+Use Logistic Regression or Naive Bayes.
+
+Compare performance using BoW and TF-IDF features.
+
+Deliverables
+Python notebook (.ipynb).
+
+Clean and modular code.
+
+Scraped dataset (CSV).
+
+Output screenshots.
+
+Short report (1-2 pages) with observations and conclusions.
