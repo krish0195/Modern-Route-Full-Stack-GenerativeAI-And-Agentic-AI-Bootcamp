@@ -5,7 +5,7 @@ git push -u origin main
 
 
 git add .
-git commit -m "added portfolio and blog"
+git commit -m "code updated"
 git push -u origin main --force /git push
 
 
@@ -52,3 +52,8 @@ cd D:\Datascience\Modern Route-Full Stack GenerativeAI And Agentic AI Bootcamp\A
 python data_scrapper.py
 	(pip install bs4
 	pip install undetected-chromedriver)
+
+
+Asssignment
+python scrapper.py
+python preprocess.py
