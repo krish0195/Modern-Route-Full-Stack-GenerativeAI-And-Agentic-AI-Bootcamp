@@ -56,4 +56,16 @@ python data_scrapper.py
 
 Asssignment
 python scrapper.py
-python preprocess.py
+
+cd D:\Datascience\Modern Route-Full Stack GenerativeAI And Agentic AI Bootcamp\Assignment\Text Feature Engineering Assignment\scripts
+
+python features.py
+python comparison.py
+python models.py
+	
+
+f = open(r"D:\Datascience\Modern Route-Full Stack GenerativeAI And Agentic AI Bootcamp\RESOURCES\Class-06-07-11-12-Apr-Word2vec-with-practical\data\story1.txt",encoding='unicode_escape')
+
+https://meshapi.ai/
+
+

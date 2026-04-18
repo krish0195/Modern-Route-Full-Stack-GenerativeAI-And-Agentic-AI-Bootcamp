@@ -47,7 +47,7 @@ mcp==1.14.0
 langchain-mcp-adapters==0.1.10
 scikit-learn==1.4.2
 rank-bm25==0.2.2
-numpy==1.26.4
+numpy>=2.1.0
 scipy==1.11.4
 sentence-transformers==2.7.0
 gensim==4.3.2
@@ -66,3 +66,4 @@ scikit-learn
 nltk
 beautifulsoup4
 requests
+pyyaml
