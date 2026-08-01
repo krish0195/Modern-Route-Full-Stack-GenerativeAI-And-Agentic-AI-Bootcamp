@@ -2,6 +2,8 @@ https://github.com/sunnysavita10/Full-Stack-GenAI-Bootcamp-1.0/tree/main
 
 https://www.notion.so/Class-08-09-18-Apr-19-Apr-346893f0ead08082a6eaebff15577b81
 
+langchain messages: https://docs.langchain.com/oss/python/langchain/messages
+
 git remote add origin	https://github.com/krish0195/Modern-Route-Full-Stack-GenerativeAI-And-Agentic-AI-Bootcamp.git
 git push -u origin main
 
@@ -10,17 +12,48 @@ git add .
 git commit -m "code updated"
 git push -u origin main --force /git push
 
+oolama:
+ollama -v
+ollama
+/bye
+ollama list
+	nemotron-3-super:cloud
+ollama run deepseek-r1 
+ollama pull qwen2.5-coder:1.5b
 
+
+Delete the old virtual environment:
+	mdir /s /q venv
 
 
 uv init
 uv python list
-uv venv venv --python cpython-3.11.13-windows-x86_64-none
+python --version
 
-venv\Scripts\activate
+
+
+uv run python hello.py
+
+
+
+uv python install 3.12
+uv python install 3.8
+
+uv venv venv --python cpython-3.12.12-windows-x86_64-none
+
+py install 3.11
+
+pip install -r requirements.txt
+
+.venv\Scripts\activate
+
+
 
 uv pip install -r requirements.txt
-uv pip install structlog
+uv pip install structlog.
+uv pip install python-dotenv==1.1.1
+uv pip install langchain-ollama
+
 ***********
 {'messages': [HumanMessage(content='What is the capital of France?', additional_kwargs={}, response_metadata={}),
 
@@ -70,4 +103,48 @@ f = open(r"D:\Datascience\Modern Route-Full Stack GenerativeAI And Agentic AI Bo
 
 https://meshapi.ai/
 
+
+langchain_google_genai
+langchain-openai
+langchain-groq
+langchain-openrouter
+langchain-huggingface
+langchain-anthropic
+
+
+
+
+
+scikit-learn==1.4.2
+rank-bm25==0.2.2
+numpy==1.26.4
+scipy==1.11.4
+sentence-transformers==2.7.0
+gensim==4.3.2
+torch>=2.4.0
+torchvision>=0.19.0
+transformers>=4.41.0
+datasets>=2.19.0
+pillow>=10.2.0
+mteb
+ipykernel
+nltk
+pyyaml
+langchain_google_genai
+langchain-openai
+langchain-groq
+langchain-openrouter
+langchain-huggingface
+langchain-anthropic
+langchain-ollama
+langchain
+langchain-community
+pypdf 
+python-docx 
+pandas 
+openpyxl 
+beautifulsoup4
+docx2txt 
+jq 
+unstructured
 

@@ -1,0 +1,112 @@
+
+gemini - https://ai.google.dev/gemini-api/docs/models
+Hugging face -https://huggingface.co/
+
+
+
+
+1)one hot encoding
+2)bag of words
+3)tf-idf
+4)word 2 vec
+	1)cbow
+	2)skip gram
+
+files- custom_word2vec_training.ipynb(practical of -word 2 vec,cbow,skip gram,word 2 vec custom model training)
+
+
+
+18.4.26
+	SOTA embedding models-text image audio video
+	
+	similariy search-with diff models
+		dot,cosine similarity,euclean distance(l2)
+	How to select best embedding model
+		EVALUATION OF EMBEDDING MODELS(RAG)
+	keyword search
+
+
+19.4.26
+
+
+20.6.26
+	(into of ft,hf,hugging face(non inst finetuning,inst finwetuninig,preferencetuning) framework,unsloth(non inst finetuning,inst finwetuninig,preference tuning),multimodelfinetuning(image)
+	using unsloth ,custom data prepared for multimodal finetuning
+	
+
+
+21.6.26 -21 June Day - 27 API based Finetuning
+
+	D:\Datascience\Modern Route-Full Stack GenerativeAI And Agentic AI Bootcamp\RESOURCES\21 June Day - 27 API based Finetuning
+	
+
+GPT Finetuning ai model with cola anf finetuning into
+
+27.6.26	
+	concluding of finetuninig.
+
+	Here are the topics covered in the session:
+
+	LLM Training Stages
+	Full Fine-Tuning vs. PEFT
+	Weights in Neural Networks & Transformers
+	Matrix & Rank
+	LoRA (Low-Rank Adaptation)
+	QLoRA (Quantized LoRA)
+	Backpropagation & Optimizers
+	LoRA Practical (TinyLlama 1.1B
+
+28.6.26 -  CLASS 30 28 June Day - 29 RLHF & DPO Theory with Practical Implementation
+	whats RLHF,see rlhf and dpo
+	How PPO Works in RLHF (Simple Notes)
+	DPO MODEL
+
+
+4.7.26
+
+rag intro all in theory
+
+5.7.26
+
+Rag
+
+
+lanchain data loaders
+
+data_parsing_part1_langchain_data_loaders.ipynb
+
+	LAODING DATA FROM -pdf,txt,csv,json,html,.docx,.md,WebBaseLoader
+
+ADVANCE parsing-data_parsing_part2.ipynb
+
+	uv pip install docling give result in  madrdown,tessert ocr download from externl (not from pip)
+	uv pip install pytesseract
+
+
+11.7.26-11 July Day - 32 Data Parsing part-2
+
+RAG_Pipeline.ipynb
+
+	lamma parser- parsing pdf
+	covered pdf chucking,embedding,faiss db and llm in rag chain
+
+
+
+**********************************
+
+
+
+LLM List
+GPT (OpenAI)
+
+Llama (Meta)
+
+Mistral (Mistral AI)
+
+Deepseek (DeepSeek-AI)
+
+Qwen (Alibaba Cloud)
+
+Opus / Haiku / Sonnet (The Claude 3 family by Anthropic)
+
+Gemini (Google)
