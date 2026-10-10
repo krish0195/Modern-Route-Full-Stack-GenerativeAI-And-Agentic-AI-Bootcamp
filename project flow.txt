@@ -1,4 +1,7 @@
-https://github.com/sunnysavita10/Full-Stack-GenAI-Bootcamp-1.0/tree/main
+
+https://github.com/sunnysavita10/Full-Stack-GenAI-Bootcamp-1.0/blob/main/Class-45-12-sep-2026-memory_managnment_extended_human_in_loop/memory_managment.ipynb
+
+career.krishnaik.in/dashboard/hackathons
 
 https://www.notion.so/Class-08-09-18-Apr-19-Apr-346893f0ead08082a6eaebff15577b81
 
@@ -8,9 +11,13 @@ git remote add origin	https://github.com/krish0195/Modern-Route-Full-Stack-Gener
 git push -u origin main
 
 
+git reset --soft origin/main
+git status
 git add .
-git commit -m "code updated"
+git commit -m "Clean commit without secrets"
+git push origin main
 git push -u origin main --force /git push
+
 
 oolama:
 ollama -v
@@ -30,7 +37,7 @@ uv init
 uv python list
 python --version
 
-
+uv python install Chroma
 
 uv run python hello.py
 
@@ -43,7 +50,6 @@ uv venv venv --python cpython-3.12.12-windows-x86_64-none
 
 py install 3.11
 
-pip install -r requirements.txt
 
 .venv\Scripts\activate
 
@@ -71,12 +77,19 @@ model provider-openai
 		cohere
 		aws bedrock
 
-uv python list
-uv venv venv --python cpython-3.11.13-windows-x86_64-none
+
+*************************************
+
+create from stratch:
+
+
+
 venv\Scripts\activate
 uv pip install -r requirements.txt
-pip install ipykernel
+uv pip install -r requirements_vectordb.txt
+uv pip install ipykernel
 
+*******************************************
 
 To install new python versions: use only c python interpreter
 

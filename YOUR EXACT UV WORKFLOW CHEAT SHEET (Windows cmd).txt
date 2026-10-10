@@ -1,0 +1,54 @@
+=====================================================
+YOUR EXACT UV WORKFLOW CHEAT SHEET (Windows cmd)
+=====================================================
+
+1. CHECK INSTALLED & AVAILABLE PYTHON VERSIONS:
+-------------------------------------------------
+uv python list
+
+
+2. CREATE VENV USING SPECIFIC CPYTHON RUNTIME:
+-------------------------------------------------
+uv venv venv --python cpython-3.12.12-windows-x86_64-none
+
+(Creates folder named 'venv' in your current project root)
+
+
+3. ACTIVATE THE VIRTUAL ENVIRONMENT:
+-------------------------------------------------
+venv\Scripts\activate
+
+(To verify: Command line prompt displays "(venv)")
+
+
+4. DEACTIVATE (WHEN FINISHED):
+-------------------------------------------------
+deactivate
+
+
+5. INSTALL PACKAGES INTO THIS VENV:
+-------------------------------------------------
+uv pip install ipykernel pandas numpy
+
+(To verify: Run "uv pip list" to see installed libraries)
+
+
+6. SELECT PYTHON INTERPRETER (FOR .PY FILES):
+-------------------------------------------------
+Step 1: Press Ctrl + Shift + P
+Step 2: Type: "Python: Select Interpreter" and press Enter
+Step 3: Click "Enter interpreter path..." -> "Find..."
+Step 4: Browse and select: .\venv\Scripts\python.exe
+(To verify: Bottom-right status bar displays "3.12.12 ('venv': venv)")
+
+
+7. SELECT JUPYTER KERNEL (FOR .IPYNB NOTEBOOKS):
+-------------------------------------------------
+Step 1: Open your notebook file (.ipynb)
+Step 2: Click the kernel name in the top-right corner
+Step 3: Select "Python Environments..."
+Step 4: Pick: .\venv\Scripts\python.exe
+(To verify: Top-right indicator displays "venv (Python 3.12.12)")
+
+* Rule: Both Interpreter and Kernel must point to .\venv\Scripts\python.exe
+=====================================================

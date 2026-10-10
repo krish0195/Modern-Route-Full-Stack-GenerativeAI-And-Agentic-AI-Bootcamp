@@ -1,0 +1,17 @@
+# ============================================================
+# Complex PDF Parser for RAG
+# Text + Tables + Images + OCR + LangChain Documents
+# ============================================================
+
+# Install dependencies
+
+import os
+import json
+import fitz  # PyMuPDF
+import pdfplumber
+import pandas as pd
+from PIL import Image
+from pathlib import Path
+from langchain_core.documents import Document
+
+

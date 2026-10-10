@@ -1,0 +1,22 @@
+Date: 18.08.2026
+Topic: 19 July Vector Database (Part-1)-- completed
+
+
+****************************************************************
+
+Date: 22.08.2026
+Topic: 37 25 July Vector Database Part-2-- completed
+
+
+date:23.8.26
+Topic:26 July Chunking - completed
+
+***********************************************************
+Start the session:
+
+29 July Retriever for RAG part-2
+
+*********************************************
+
+Start the session:
+5 Sept Pydantic, async python and Memory in AI syste-02:23:00

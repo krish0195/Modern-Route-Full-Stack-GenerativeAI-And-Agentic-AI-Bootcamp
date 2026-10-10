@@ -20,9 +20,10 @@ sentence-transformers
 mteb
 
 # ==========================
-# LangChain Ecosystem
+# LangChain & LangGraph Ecosystem
 # ==========================
 langchain
+langchain-core
 langchain-community
 langchain-openai
 langchain-google-genai
@@ -31,10 +32,35 @@ langchain-huggingface
 langchain-anthropic
 langchain-ollama
 langchain-openrouter
+langchain-docling
+langgraph
+langmem
+langgraph-checkpoint-sqlite
+langgraph-checkpoint-postgres
+
+# ==========================
+# Vector Stores & Retrieval
+# ==========================
+faiss-cpu
+pinecone
+langchain-chroma
+langchain-pinecone
+langchain-qdrant
+
+# ==========================
+# Database & Persistence
+# ==========================
+psycopg[binary,pool]
+
+# ==========================
+# Data Validation & Schemas
+# ==========================
+pydantic
 
 # ==========================
 # Document Parsing
 # ==========================
+docling
 pypdf
 python-docx
 docx2txt
@@ -42,7 +68,6 @@ openpyxl
 beautifulsoup4
 unstructured
 markdown
-
 jq
 pillow
 
@@ -55,6 +80,4 @@ requests
 python-dotenv
 lxml
 html5lib
-
-
-docling
+tabulate

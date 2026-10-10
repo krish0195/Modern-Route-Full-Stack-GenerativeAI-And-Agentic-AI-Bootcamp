@@ -62,16 +62,22 @@ GPT Finetuning ai model with cola anf finetuning into
 	DPO MODEL
 
 
-4.7.26
+4.7.26-Class-30-Data-Parsing-for-RAG
+data_parsing_part1_langchain_data_loaders.ipynb
+data_parsing_part2_pymupdf_pdfplumber.ipynb
 
 rag intro all in theory
 
-5.7.26
+5.7.26-Class-31-11-July-2026-RAG-Pipeline-End-to-End
+
 
 Rag
-
+RAG_Pipeline.ipynb
 
 lanchain data loaders
+
+	lamma parser- parsing pdf
+	covered pdf chucking,embedding,faiss db and llm in rag chain
 
 data_parsing_part1_langchain_data_loaders.ipynb
 
@@ -83,16 +89,185 @@ ADVANCE parsing-data_parsing_part2.ipynb
 	uv pip install pytesseract
 
 
-11.7.26-11 July Day - 32 Data Parsing part-2
+11.7.26-11 July Day - Class-32-18-July-2026-Data-Parsing-Extended
 
-RAG_Pipeline.ipynb
+data_parsing_part3_docling.ipynb
+data_parsing_part4_llama_parser.ipynb
 
 	lamma parser- parsing pdf
 	covered pdf chucking,embedding,faiss db and llm in rag chain
+	
 
 
+
+18.7.26
+
+Data-Parsing-Extended
+
+docling parser and llama parser
+
+19.7.26
+
+vector bases typees and theory of vector searches ,
+
+ 
+ index search	
+	exact match ,approximate match(,ivf,hnsw)
+
+
+
+
+
+5.9.26
+
+Class-43-05-Sep-2026-Pydantic-langgraph-Memory
+
+pydantic
+==================================================
+QUICK REMINDER: PYDANTIC & LANGGRAPH MEMORY
+==================================================
+
+1. PYDANTIC (Pydantic.ipynb)
+--------------------------------------------------
+Core: Define Schema -> Validate Input -> Structured Data / LLM Output
+
+- BaseModel: Defines schemas, types, required fields.
+- Field(): Adds constraints (gt/lt), defaults, and metadata.
+- ValidationError: Raised on schema mismatch.
+- Validators:
+  * @field_validator: Validates a single field.
+  * @model_validator: Validates multiple fields / entire model.
+- Handlers: Supports None/Optional, nested models.
+- Methods:
+  * In: model_validate(), model_validate_json()
+  * Out: model_dump() [dict], model_dump_json() [JSON]
+- LLM Role: Enforces structured schema output.
+
+Rule: @field_validator = 1 field | @model_validator = full model
+
+
+2. LANGGRAPH MEMORY (memory_in_langgraph.ipynb)
+--------------------------------------------------
+Core: Short-Term (Thread) + Long-Term (Cross-Thread) Memory
+
+- MessagesState: Tracks conversation messages.
+- Short-Term Memory:
+  * Tool: InMemorySaver (Checkpointer)
+  * Scope: Single thread (thread_id)
+- Long-Term Memory:
+  * Tool: InMemoryStore (Store)
+  * Scope: Cross-thread, persistent per user_id
+- Namespaces: ("users", user_id, "memories")
+- Workflow:
+  * Save: Extract info (e.g., 'remember:') -> store write
+  * Retrieve: runtime.store.search(namespace) -> inject into system prompt
+- Compilation: graph.compile(checkpointer=..., store=...)
+
+Rule: Checkpointer = Thread State | Store = Cross-Thread Memory
+==================================================
+
+
+6.9.26
+Class-43-05-Sep-2026-Pydantic-langgraph-Memory
+==================================================
+TOPICS COVERED: AI MEMORY MANAGEMENT
+==================================================
+
+1. CORE CONCEPT
+- LLM statelessness & context injection
+- Storage vs. Active Context separation
+
+2. MEMORY TYPES
+- Short-Term: Checkpointer, Trim, Delete, Summarize, Filtering
+- Long-Term: Store operations (put/get/search), semantic search, namespaces/user_id
+
+3. SHORT-TERM STRATEGIES
+- Full Memory: overhead & cost limitations
+- Sliding Window: fixed recent message window (N turns)
+- Summary + Recent Messages: rolling summarization hybrid
+==================================================
+12.9.26
+
+==================================================
+HEADINGS COVERED: MEMORY MANAGEMENT 2
+==================================================
+
+1. CORE CONCEPT
+- LLM statelessness, context injection & storage/context separation
+
+2. MEMORY TAXONOMY
+- Short-Term: Checkpointer, Trim, Delete, Summarize, Filtering
+- Long-Term: Store operations, namespaces & semantic retrieval
+
+3. SHORT-TERM STRATEGIES
+- Full History vs. Sliding Window vs. Summary + Recent Messages
+
+4. CONVERSATIONAL RAG
+- FAISS/VectorStores, Query Rewriting & Grounded Generation
+
+5. LANGGRAPH & LANGMEM
+- StateGraph workflow, InMemorySaver, InMemoryStore & auto-extraction
+
+6. PRODUCTION SQLITE PERSISTENCE
+- SqliteSaver (checkpoints.db), custom SQLite store & Pydantic extraction
+==================================================
+
+13.9.26
+
+PREFACE: HUMAN-IN-THE-LOOP (HITL)
+
+• Purpose: Decouple AI reasoning from execution by requiring human approval before running high-risk actions (e.g., refunds)[cite: 1].
+
+• Approaches Covered:
+  1. Procedural: Vanilla Python + LangChain structured output (`Pydantic`) paused via `input()`[cite: 1].
+  2. Stateful: LangGraph workflow using `interrupt()`, `InMemorySaver`, and `Command(resume=...)`[cite: 1].
+
+• Flow: LLM Analyzes Request → Structured Proposal Generated → Graph Pauses (`interrupt`) → Human Approves/Rejects → Deterministic Execution/Stop[cite: 1].
+
+• Stack: LangGraph, LangChain OpenAI (`gpt-4.1-mini`), Pydantic[cite: 1].
 
 **********************************
+
+19.9.26
+OVERVIEW OF CONCEPTS (LANGGRAPH)
+
+1. Workflow Patterns (Notebook 1)
+- Sequential: A linear step-by-step pipeline where each node's output feeds the next[cite: 1].
+- Parallelization: Runs independent tasks concurrently (fan-out) and merges them using an aggregator node (fan-in)[cite: 1].
+- Routing: Dynamically routes execution to a single specialist node using structured classification[cite: 1].
+- Orchestrator–Worker: A planner breaks tasks into pieces, spawns parallel workers via Send(), and synthesizes outputs[cite: 1].
+- Evaluator–Optimizer: An iterative feedback loop that reviews, refines, and terminates upon approval or attempt limits[cite: 1].
+- Tool-Calling Agent: An autonomous loop using ToolNode and MessagesState where the LLM decides when to call tools[cite: 1].
+
+2. Subgraph Patterns (Notebook 2)
+- Shared-State Subgraph: Directly embedding a compiled subgraph as a node when it shares the parent's state schema[cite: 2].
+- Isolated-State Subgraph: Running a subgraph inside an adapter worker when state schemas differ[cite: 2].
+- Dynamic Fan-Out: Using Send() to spawn parallel workers that each run a subgraph on separate inputs[cite: 2].
+- Multi-Destination Routing: Using Send() to route data to different subgraphs or chaining them in a wrapper node[cite: 2].
+
+3. Core Primitives
+- State: TypedDict for states, MessagesState for chat history, and Pydantic for structured outputs[cite: 1].
+- Graph Core: StateGraph, START/END, add_edge(), and add_conditional_edges()[cite: 1, 2].
+- Reducers: Annotated[list, operator.add] to safely combine parallel outputs[cite: 1, 2].
+- Dispatch: Send() for dynamic task creation with custom payloads[cite: 1, 2].
+****************************************************************
+20.9.26
+OVERVIEW OF CONCEPTS (MULTI-AGENT PATTERNS)
+
+1. Multi-Agent Architectures (Notebook 3)
+- Router: A classifier evaluates a query and delegates execution to exactly one specialist agent[cite: 3].
+- Subagents (Agent-as-Tool): A centralized coordinator delegates focused tasks by invoking specialist agents wrapped as tools[cite: 3].
+- Supervisor: A central manager iteratively routes tasks to specialized workers, aggregates outputs, and terminates via turn limits or completion criteria[cite: 3].
+- Handoff: A triage node uses Command(goto=...) to explicitly transfer graph execution and active agent control to a specialist[cite: 3].
+- Swarm: Decentralized agents hand control back and forth directly using handoff tools and thread memory (langgraph-swarm)[cite: 3].
+- Hierarchical Supervisor: A high-level supervisor delegates tasks to entire team subgraphs rather than managing individual workers[cite: 3].
+- Parallel Collaboration: A coordinator generates a multi-task plan, fans out to specialist workers in parallel via Send(), and merges outputs with a reducer[cite: 3].
+- Coordinator-Guided Peer Network: A round-table pattern where peers share a unified note state while a lightweight coordinator picks the next speaker[cite: 3].
+
+2. Core Primitives & State
+- Memory & Routing: Command(goto=...) for direct execution jumps and InMemorySaver for session persistence[cite: 3].
+- State & Coordination: TypedDict for shared/network state, MessagesState for conversational flow, and Annotated[list, operator.add] for parallel output accumulation[cite: 3].
+********************************************************
 
 
 
